@@ -279,7 +279,7 @@ class TickerBase():
         ticker_url = "{}/{}".format(self._scrape_url, self.ticker)
 
         # get info and sustainability
-        data = utils.get_json(ticker_url, proxy)
+        data = utils.get_json(url+'/financials', proxy)
 
         # holders
         url = "{}/{}".format(self._scrape_url, self.ticker)
@@ -358,6 +358,7 @@ class TickerBase():
             self._calendar.columns = ['Value']
         except Exception:
             pass
+        
 
         # analyst recommendations
         try:
